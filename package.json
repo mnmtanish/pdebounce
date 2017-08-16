@@ -1,0 +1,50 @@
+{
+  "name": "singly",
+  "version": "1.0.0",
+  "description": "Debounce a promise returning function based on promise completion",
+  "main": "dist/index.js",
+  "scripts": {
+    "clean": "rimraf coverage dist",
+    "build": "npm run clean && tsc",
+    "test": "jest --coverage --watch",
+    "lint": "prettier --print-width 120 --single-quote --trailing-comma es5 --write \"src/**/*.ts\"",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mnmtanish/singly.git"
+  },
+  "keywords": [],
+  "author": "Muhammed Thanish <mnmtanish@gmail.com> (http://thanish.me/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mnmtanish/singly/issues"
+  },
+  "homepage": "https://github.com/mnmtanish/singly#readme",
+  "devDependencies": {
+    "@types/jest": "^20.0.0",
+    "jest": "^20.0.0",
+    "prettier": "^1.5.3",
+    "rimraf": "^2.6.1",
+    "ts-jest": "^20.0.0",
+    "typescript": "^2.0.0"
+  },
+  "jest": {
+    "transform": {
+      ".ts": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "\\.spec\\.ts$",
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "mapCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.ts",
+      "!src/index.ts",
+      "!src/__test_utils.ts",
+      "!src/**/*.mock.ts",
+      "!src/**/*.d.ts"
+    ]
+  }
+}
